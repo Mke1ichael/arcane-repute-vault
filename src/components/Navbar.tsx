@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Home, Vote, Trophy, User, Wallet } from 'lucide-react';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
+import Logo from '@/assets/logo.svg';
 
 const Navbar = () => {
   const location = useLocation();
@@ -18,10 +19,17 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-magical-gradient rounded-full animate-glow" />
-            <span className="font-fantasy text-xl text-magical">FHE DAO</span>
-          </div>
+          <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
+            <img 
+              src={Logo} 
+              alt="Arcane Repute Vault" 
+              className="w-10 h-10 drop-shadow-lg"
+            />
+            <div className="flex flex-col">
+              <span className="font-fantasy text-lg text-magical leading-tight">Arcane Repute</span>
+              <span className="font-fantasy text-sm text-magical/70 leading-tight">Vault</span>
+            </div>
+          </Link>
 
           {/* Navigation Links */}
           <div className="hidden md:flex items-center space-x-1">
